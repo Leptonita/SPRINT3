@@ -119,9 +119,10 @@ function calculateTotal() {
 function generateCart() {
     // Using the "cartlist" array that contains all the items in the shopping cart, 
     // generate the "cart" array that does not contain repeated items, instead each item of this array "cart" shows the quantity of product.
+    cart.length = 0;
     
     for (let i = 0; i < cartList.length; i++) {
-
+        
         //if cart is empty, add first item
         if (cart.length === 0) {
             //add one quantity attribute and include that unit of product to cart 
