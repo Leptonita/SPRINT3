@@ -1,3 +1,4 @@
+'use strict'
 // If you have time, you can move this variable "products" to a json or js file and load the data in this js. It will look more professional
 var products = [
    {
@@ -74,12 +75,25 @@ var total = 0;
 // Exercise 1
 function buy(id) {
     // 1. Loop for to the array products to get the item to add to cart
-    // 2. Add found product to the cartList array
+    let indexArrProducts = -1;
+    let i=0;
+    while ( i < products.length && indexArrProducts === -1){
+        let idArrProduct = products[i].id;
+
+        if (idArrProduct === id ) {
+            indexArrProducts = i;
+            // 2. Add found product to the cartList array
+            cartList.push(products[i]);
+        } else {
+            i++;
+        }        
+    }  
+    console.log('cartList: ',cartList);
 }
 
 // Exercise 2
 function cleanCart() {
-
+    
 }
 
 // Exercise 3
