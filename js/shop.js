@@ -93,10 +93,10 @@ function buy(id) {
 
 // Exercise 2
 function cleanCart() {
-    //option1
+    // option1
     //cartList.length = 0;
 
-    //option2
+    // option2
     cartList.splice(0, cartList.length);
 
     console.log('cartList: ',cartList);
