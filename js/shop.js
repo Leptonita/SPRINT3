@@ -126,6 +126,8 @@ function generateCart() {
         if (cart.length === 0) {
             //add one quantity attribute and include that unit of product to cart 
             cartList[i].quantity = 1;
+            cartList[i].subtotal = cartList[i].price;
+            cartList[i].subtotalWithDiscount = 0;
             cart.push(cartList[i]);            
             i++;
         }
@@ -140,17 +142,20 @@ function generateCart() {
             j++;
         }
 
-
         if (posicionArrCartEncontrado === -1) {
             //this product is not in cart, we add quantity attribute and include that unit of product to cart 
             cartList[i].quantity = 1;
+            cartList[i].subtotal = cartList[i].price;
+            cartList[i].subtotalWithDiscount = 0;
             cart.push(cartList[i]);
         } else {
             //the product is already in the cart array, we add one more unit
             cart[posicionArrCartEncontrado].quantity += 1;
+            cart[posicionArrCartEncontrado].subtotal = cart[posicionArrCartEncontrado].price * cart[posicionArrCartEncontrado].quantity;
         }
         
     }
+    console.log('cart :', cart);
     return cart;
 }
 

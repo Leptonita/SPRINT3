@@ -20,12 +20,15 @@
 		<nav class="navbar py-3 py-lg-0 navbar-light bg-light navbar-expand-lg" id="navbar-example2">
 			 <div class="container d-flex">
 				 <a class="navbar-brand" href="#!">ShopNow</a>
-				 <div class="d-flex flex-row order-lg-last align-items-center">
-				 
+				 <div class="d-flex flex-row order-lg-last align-items-center">					
 					 <button type="button" class="navbar-toggler order-last collapsed" data-bs-toggle="collapse" data-bs-target="#navbar" aria-expanded="false" aria-controls="navbar">
 						 <span class="navbar-toggler-icon"></span>
 					 </button>
 					 <ul class="navbar-nav me-3 me-lg-0 d-flex flex-row align-items-center">
+						<li class="dropdown search-dropdown nav-item py-lg-3">
+							<a href="javascript:void(0)" class="btn btn-outline-dark flex-center" type="button" onclick="generateCart()"> generate Cart </a>
+						</li>
+
 						 <li class="dropdown search-dropdown nav-item py-lg-3">						 
 							 <a href="javascript:void(0)" class="btn btn-outline-dark flex-center" type="button" data-bs-toggle="modal" data-bs-target="#cartModal" onclick="open_modal()" data-bs-auto-close="outside">
 								<i class="fas fa-shopping-cart me-1"></i> Cart <span class="badge bg-dark text-white ms-1 rounded-pill" id="count_product">0</span>
