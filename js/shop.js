@@ -119,6 +119,40 @@ function calculateTotal() {
 function generateCart() {
     // Using the "cartlist" array that contains all the items in the shopping cart, 
     // generate the "cart" array that does not contain repeated items, instead each item of this array "cart" shows the quantity of product.
+    let idArrCartList = -1;
+
+    for (let i = 0; i < cartList.length; i++) {
+
+        //if cart is empty, add first item
+        if (cart.length === 0) {
+            //add one quantity attribute and include that unit of product to cart 
+            cartList[i].quantity = 1;
+            cart.push(cartList[i]);            
+            i++;
+        }
+        
+        //searching product on cart ()
+        let posicionArrCartEncontrado = -1;
+        let j = 0;
+        while( j < cart.length  && posicionArrCartEncontrado == -1 ) {
+            if (cartList[i].id === cart[j].id) {
+                posicionArrCartEncontrado = j;
+            }
+            j++;
+        }
+
+
+        if (posicionArrCartEncontrado === -1) {
+            //this product is not in cart, we add quantity attribute and include that unit of product to cart 
+            cartList[i].quantity = 1;
+            cart.push(cartList[i]);
+        } else {
+            //the product is already in the cart array, we add one more unit
+            cart[posicionArrCartEncontrado].quantity += 1;
+        }
+        
+    }
+    return cart;
 }
 
 // Exercise 5
