@@ -165,6 +165,16 @@ function generateCart() {
 // Exercise 5
 function applyPromotionsCart() {
     // Apply promotions to each item in the array "cart"
+    cart.forEach(function(item){
+        if (item.name === 'cooking oil' && item.quantity >= 3){
+            item.subtotalWithDiscount = 10 * item.quantity;
+        } else if (item.id === 3 && item.quantity >= 10){
+            item.subtotalWithDiscount = (item.price * 2/3 * item.quantity).toFixed(2);
+        }
+    })
+
+    console.log('cart-con-promos: ',cart);
+    return cart;
 }
 
 // Exercise 6
