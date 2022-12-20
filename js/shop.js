@@ -187,8 +187,7 @@ function printCart() {
     applyPromotionsCart();
     let shoppingCartItem = "";
     cart.forEach(function(item){
-        
-        
+                
         shoppingCartItem += `<tr>
         <th scope="row">${item.name}</th>
         <td>${item.price}</td>
@@ -197,7 +196,7 @@ function printCart() {
         </tr>`;
        
     })
-    console.log('shoppingCartItemxxx: ', shoppingCartItem);
+    console.log('shoppingCartItem: ', shoppingCartItem);
     document.getElementById("cart_list").innerHTML = shoppingCartItem;
 }
 
