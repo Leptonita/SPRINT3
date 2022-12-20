@@ -130,7 +130,7 @@ function generateCart() {
             //add one quantity attribute and include that unit of product to cart 
             cartList[i].quantity = 1;
             cartList[i].subtotal = cartList[i].price;
-            cartList[i].subtotalWithDiscount = 0;
+            cartList[i].subtotalWithDiscount = cartList[i].subtotal;
             cart.push(cartList[i]);            
             i++;
         }
@@ -146,15 +146,16 @@ function generateCart() {
         }
 
         if (posicionArrCartEncontrado === -1) {
-            //this product is not in cart, we add quantity attribute and include that unit of product to cart 
+            //this product was not in cart, we add quantity attribute and include that unit of product to cart 
             cartList[i].quantity = 1;
             cartList[i].subtotal = cartList[i].price;
-            cartList[i].subtotalWithDiscount = 0;
+            cartList[i].subtotalWithDiscount = cartList[i].subtotal;
             cart.push(cartList[i]);
         } else {
             //the product is already in the cart array, we add one more unit
             cart[posicionArrCartEncontrado].quantity += 1;
             cart[posicionArrCartEncontrado].subtotal = cart[posicionArrCartEncontrado].price * cart[posicionArrCartEncontrado].quantity;
+            cart[posicionArrCartEncontrado].subtotalWithDiscount = cart[posicionArrCartEncontrado].subtotal;
         }
         
     }
@@ -164,8 +165,8 @@ function generateCart() {
 
 // Exercise 5
 function applyPromotionsCart() {
-    // Apply promotions to each item in the array "cart"
-    cart.forEach(function(item){
+     // Apply promotions to each item in the array "cart"
+     cart.forEach(function(item){
         if (item.name === 'cooking oil' && item.quantity >= 3){
             item.subtotalWithDiscount = 10 * item.quantity;
         } else if (item.id === 3 && item.quantity >= 10){
@@ -180,6 +181,24 @@ function applyPromotionsCart() {
 // Exercise 6
 function printCart() {
     // Fill the shopping cart modal manipulating the shopping cart dom
+    
+    
+    generateCart();
+    applyPromotionsCart();
+    let shoppingCartItem = "";
+    cart.forEach(function(item){
+        
+        
+        shoppingCartItem += `<tr>
+        <th scope="row">${item.name}</th>
+        <td>${item.price}</td>
+        <td>${item.quantity}</td>
+        <td>${item.subtotalWithDiscount}</td>
+        </tr>`;
+       
+    })
+    console.log('shoppingCartItemxxx: ', shoppingCartItem);
+    document.getElementById("cart_list").innerHTML = shoppingCartItem;
 }
 
 
