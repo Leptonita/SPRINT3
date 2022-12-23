@@ -82,19 +82,19 @@
 				<div class="col-sm-6">
 					<div class="mt-3">
 						<label for="fName" class="form-label">First Name:</label>
-						<input id="fName" class="form-control ml-3" type="text" placeholder="First Name" />
+						<input id="fName" class="form-control ml-3" type="text" placeholder="First Name" required />
 						<div id="errorName" class="invalid-feedback">This field is required and must have, at least, 3 characters
 						</div>
 					</div>
 					<div class="mt-3 ">
 						<label for="fEmail" class="form-label">Email:</label>
-						<input id="fEmail" class="form-control ml-3" type="email" placeholder="Email" minlength="3" />
+						<input id="fEmail" class="form-control ml-3" type="email" placeholder="Email" minlength="3" required />
 						<div id="errorEmail" class="invalid-feedback">This field is required and must contain an '@' and have, at
 							least, 3 characters</div>
 					</div>
 					<div class="mt-3 ">
 						<label for="fAddress" class="form-label">Address:</label>
-						<input id="fAddress" class="form-control" type="text" placeholder="Address" minlength="3" />
+						<input id="fAddress" class="form-control" type="text" placeholder="Address" minlength="3" required />
 						<div id="errorAddress" class="invalid-feedback">This field is required and must have, at least, 3 characters
 						</div>
 					</div>
@@ -102,24 +102,25 @@
 				<div class="col-sm-6">
 					<div class="mt-3">
 						<label for="fLastN" class="form-label">Last Name:</label>
-						<input id="fLastN" class="form-control" type="text" placeholder="Last Name" minlength="3" />
+						<input id="fLastN" class="form-control" type="text" placeholder="Last Name" minlength="3" required />
 						<div id="errorLastN" class="invalid-feedback">This field is required and must have, at least, 3 characters
 						</div>
 					</div>
 					<div class="mt-3">
 						<label for="fPassword" class="form-label">Password:</label>
-						<input id="fPassword" class="form-control" title="(4-8 characters)" type="password" minlength="4"
-							maxlength="8" placeholder="Password" />
-						<div id="errorPassword" class="invalid-feedback">Enter a correct password</div>
+						<input id="fPassword" class="form-control" title="(3-8 characters)" type="password" minlength="3"
+							maxlength="8" placeholder="Password"  required />
+						<div id="errorPassword" class="invalid-feedback">Enter a correct password - at least 3 characters with one letter and one digit</div>
 					</div>
 					<div class="mt-3">
 						<label for="fPhone" class="form-label">Phone Number:</label>
-						<input id="fPhone" class="form-control" type="number" placeholder="Phone No." />
-						<div id="errorPhone" class="invalid-feedback">Invalid phone number!! Must be 9 digits with no letters</div>
+						<input id="fPhone" class="form-control" type="number" placeholder="Phone No." required />
+						<div id="errorPhone" class="invalid-feedback">Invalid phone number!! 9 digits with no letters</div>
 					</div>
 				</div>
 				<div class="col-12 mt-4 final">
-					<button type="submit" id="btn" class="p-2 px-4 btn btn-primary shadow-lg" onclick="validate()">
+					<!-- changed the type of button from submit to button to see the values of the form and the results of its validation-->
+					<button type="button" id="btn" class="p-2 px-4 btn btn-primary shadow-lg" onclick="validate()">
 						<i class="fas fa-cart-arrow-down p-2"></i>Save
 					</button>
 				</div>
