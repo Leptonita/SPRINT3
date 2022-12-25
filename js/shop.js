@@ -106,8 +106,6 @@ function cleanCart() {
     total = 0;
     document.getElementById("cart_list").innerHTML = '';
     document.getElementById("total_price").innerHTML = total;
-    console.log('cartList empty: ',cartList);
-    console.log('cart empty: ',cart);
     return total;
 }
 
@@ -119,7 +117,7 @@ function calculateTotal() {
         total += cart[i].subtotalWithDiscount;
     }
    
-    document.getElementById("total_price").innerHTML = total;
+    document.getElementById("total_price").innerHTML = total.toFixed(2);
     return total;
 }
 
@@ -177,16 +175,13 @@ function generateCart() {
 function applyPromotionsCart() {
      // Apply promotions to each item in the array "cart"
      cart.forEach(function(item){
-        if (item.name === 'cooking oil' && item.quantity >= 3){
-            item.price = 10;
+        if (item.name == 'cooking oil') {
+            item.price = (item.quantity >= 3) ? 10 : 10.5;                       
             item.subtotalWithDiscount = item.price * item.quantity;
-        } 
-        
-        if (item.id === 3 && item.quantity >= 10){
-            //item.price = (products[2].price * 2/3).toFixed(2);
-            item.price = 3.33;
-            item.subtotalWithDiscount = item.price * item.quantity;
-        }
+        } else if (item.id === 3){
+            item.price = (item.quantity >= 10) ? 3.33 : 5;   
+            item.subtotalWithDiscount = Number(item.quantity * item.price.toFixed(2)); //toFixed() returns numbers as string       
+        }        
     })
 
     console.log('cart-con-promos: ',cart);
