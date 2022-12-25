@@ -96,21 +96,31 @@ function cleanCart() {
     //option1
     //cartList.length = 0;
 
-    //option2
-    cartList.splice(0, cartList.length);
+    //option2 problemas con indice array cartList al rellenar el cartList
+    //cartList.splice(0, cartList.length);
+    //cart.splice(0, cart.length);
 
-    console.log('cartList: ',cartList);
+    //option3
+    cartList = [];
+    cart = [];
+    total = 0;
+    document.getElementById("cart_list").innerHTML = '';
+    document.getElementById("total_price").innerHTML = total;
+    console.log('cartList empty: ',cartList);
+    console.log('cart empty: ',cart);
+    return total;
 }
 
 // Exercise 3
 function calculateTotal() {
     // Calculate total price of the cart using the "cartList" array
-    let totalCartPrice = 0;
-    for (let i = 0; i < cartList.length; i++){
-        totalCartPrice += cartList[i].price;
+    total = 0;
+    for (let i = 0; i < cart.length; i++){
+        total += cart[i].subtotalWithDiscount;
     }
-    console.log(totalCartPrice);
-    return totalCartPrice;
+   
+    document.getElementById("total_price").innerHTML = total;
+    return total;
 }
 
 
@@ -168,9 +178,14 @@ function applyPromotionsCart() {
      // Apply promotions to each item in the array "cart"
      cart.forEach(function(item){
         if (item.name === 'cooking oil' && item.quantity >= 3){
-            item.subtotalWithDiscount = 10 * item.quantity;
-        } else if (item.id === 3 && item.quantity >= 10){
-            item.subtotalWithDiscount = (item.price * 2/3 * item.quantity).toFixed(2);
+            item.price = 10;
+            item.subtotalWithDiscount = item.price * item.quantity;
+        } 
+        
+        if (item.id === 3 && item.quantity >= 10){
+            //item.price = (products[2].price * 2/3).toFixed(2);
+            item.price = 3.33;
+            item.subtotalWithDiscount = item.price * item.quantity;
         }
     })
 
@@ -183,8 +198,9 @@ function printCart() {
     // Fill the shopping cart modal manipulating the shopping cart dom
     
     
-    generateCart();
+    //generateCart();
     applyPromotionsCart();
+    calculateTotal();
     let shoppingCartItem = "";
     cart.forEach(function(item){
                 
@@ -198,6 +214,7 @@ function printCart() {
     })
     console.log('shoppingCartItem: ', shoppingCartItem);
     document.getElementById("cart_list").innerHTML = shoppingCartItem;
+    
 }
 
 
@@ -208,6 +225,40 @@ function addToCart(id) {
     // Refactor previous code in order to simplify it 
     // 1. Loop for to the array products to get the item to add to cart
     // 2. Add found product to the cart array or update its quantity in case it has been added previously.
+
+    // conocer posicion en el array productos del producto comprado (id) 
+    let indexArrProducts = -1;
+    let i = 0;
+    while ( i < products.length && indexArrProducts === -1 ) {
+        if (products[i].id == id) {
+            indexArrProducts = i;
+
+            //once bought the product goes to cartList
+            cartList.push(products[i]);  // array.push(item) returns the new length of the array once the item has been pushed.
+            let cartListIndexAddedProduct = cartList.length - 1;
+            console.log('cartList: ',cartList);
+            console.log('cart',cart);
+
+            //cartList[cartListIndexAddedProduct].hasOwnProperty('quantity') 
+            //if the bought product has previously been bought, it is already in cart 
+            let indexProductInCart = cart.findIndex(item => item.id == cartList[cartListIndexAddedProduct].id);
+            console.log('indexProductInCart',indexProductInCart);
+                //product is not in cart
+            if (indexProductInCart === -1 || cart.length === 0) {
+                cartList[cartListIndexAddedProduct].quantity = 1;
+                cartList[cartListIndexAddedProduct].subtotalWithDiscount = cartList[cartListIndexAddedProduct].price;
+                cart.push(cartList[cartListIndexAddedProduct]);
+                
+            } else {
+                cart[indexProductInCart].quantity += 1;
+                cart[indexProductInCart].subtotalWithDiscount = cart[indexProductInCart].price * cart[indexProductInCart].quantity;
+            }            
+        }
+        i++;        
+    }
+    console.log('cartList2: ',cartList);
+    console.log('cart2',cart);
+
 }
 
 // Exercise 9
