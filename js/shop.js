@@ -199,10 +199,10 @@ function printCart() {
     let shoppingCartItem = "";
     cart.forEach(function(item){
                 
-        shoppingCartItem += `<tr>
+        shoppingCartItem += `<tr id="line-${item.id}">
         <th scope="row">${item.name}</th>
         <td>${item.price}</td>
-        <td>${item.quantity}</td>
+        <td> <button onclick="removeFromCart(${item.id})">-</button>  ${item.quantity} <button onclick="addToCart(${item.id})">\+</button> </td>
         <td>${item.subtotalWithDiscount}</td>
         </tr>`;
        
@@ -253,16 +253,27 @@ function addToCart(id) {
     }
     console.log('cartList2: ',cartList);
     console.log('cart2',cart);
-
+    printCart();
 }
 
 // Exercise 9
 function removeFromCart(id) {
-    // 1. Loop for to the array products to get the item to add to cart
-    // 2. Add found product to the cartList array
+    // remove one unit of the product or remove it completely from cart array 
+
+    let indexProdOfCartToRemove = cart.findIndex(item => item.id === id);
+    
+    if (cart[indexProdOfCartToRemove].quantity  > 1) {
+        cart[indexProdOfCartToRemove].quantity -= 1;
+    } else {
+        cart[indexProdOfCartToRemove].quantity -= 1;
+        delete cart[indexProdOfCartToRemove];
+        document.getElementById("line-" + id).innerHTML = '';
+    }
+    
+    printCart();
 }
 
 function open_modal(){
 	console.log("Open Modal");
-	printCart();
+	//printCart();
 }
