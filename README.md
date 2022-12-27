@@ -76,8 +76,20 @@ You have the following indications from the frontend manager:
 
 ## Exercises
 
-Exercise 1 - add products to cartList array
+Exercise 1 - add products one by one to cartList array
 
 Exercise 2 - clean cartList array
 
 Exercise 3 - calculate total price of cartList
+
+Exercise 4 - generateCart() - arranging products - with quantity - cart array
+
+Exercise 5 - promotions - applyPromotionsCart()
+
+Exercise 6 - Shopping Cart in modal - printCart()
+
+Exercise 7 - Checkout Page - form validation with JS
+
+Exercise 8 - refactoring the buying process in one function - addToCart()
+
+Exercise 9 - Removing products from cart (and adding them too)
