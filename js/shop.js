@@ -1,6 +1,6 @@
-'use strict'
+'use strict';
 // If you have time, you can move this variable "products" to a json or js file and load the data in this js. It will look more professional
-var products = [
+const products = [
    {
         id: 1,
         name: 'cooking oil',
@@ -65,12 +65,14 @@ var products = [
     }
 ]
 // Array with products (objects) added directly with push(). Products in this array are repeated.
-var cartList = [];
+let cartList = [];
 
 // Improved version of cartList. Cart is an array of products (objects), but each one has a quantity field to define its quantity, so these products are not repeated.
-var cart = [];
+let cart = [];
 
-var total = 0;
+let total = 0;
+
+let totalNumberItemsCart = 0;
 
 // Exercise 1
 function buy(id) {
@@ -104,20 +106,20 @@ function cleanCart() {
     cartList = [];
     cart = [];
     total = 0;
+    totalNumberItemsCart = 0;
     document.getElementById("cart_list").innerHTML = '';
-    document.getElementById("total_price").innerHTML = total;
-    return total;
+    document.getElementById("total_price").innerHTML = total.toFixed(2);
+    document.getElementById("count_product").innerHTML = totalNumberItemsCart;
 }
 
 // Exercise 3
 function calculateTotal() {
-    // Calculate total price of the cart using the "cartList" array
+    // Calculate total price of the cart using the 'cart' ~~"cartList"~~ array (from scratch)
     total = 0;
     for (let i = 0; i < cart.length; i++){
         total += cart[i].subtotalWithDiscount;
-    }
-   
-    document.getElementById("total_price").innerHTML = total.toFixed(2);
+    }   
+    
     return total;
 }
 
@@ -176,12 +178,11 @@ function applyPromotionsCart() {
      // Apply promotions to each item in the array "cart"
      cart.forEach(function(item){
         if (item.name == 'cooking oil') {
-            item.price = (item.quantity >= 3) ? 10 : 10.5;                       
-            item.subtotalWithDiscount = item.price * item.quantity;
+            item.price = (item.quantity >= 3) ? 10 : 10.5;    
         } else if (item.id === 3){
-            item.price = (item.quantity >= 10) ? 3.33 : 5;   
-            item.subtotalWithDiscount = Number(item.quantity * item.price.toFixed(2)); //toFixed() returns numbers as string       
-        }        
+            item.price = (item.quantity >= 10) ? 3.33 : 5;              
+        } 
+        item.subtotalWithDiscount = Number(item.quantity * item.price.toFixed(2)); //toFixed() returns numbers as string  
     })
 
     console.log('cart-con-promos: ',cart);
@@ -209,7 +210,8 @@ function printCart() {
     })
     console.log('shoppingCartItem: ', shoppingCartItem);
     document.getElementById("cart_list").innerHTML = shoppingCartItem;
-    
+    document.getElementById("count_product").innerHTML = totalNumberItemsCart;
+    document.getElementById("total_price").innerHTML = total.toFixed(2);
 }
 
 
@@ -222,6 +224,7 @@ function addToCart(id) {
     // 2. Add found product to the cart array or update its quantity in case it has been added previously.
 
     // conocer posicion en el array productos del producto comprado (id) 
+    totalNumberItemsCart +=1;
     let indexArrProducts = -1;
     let i = 0;
     while ( i < products.length && indexArrProducts === -1 ) {
@@ -234,8 +237,8 @@ function addToCart(id) {
             console.log('cartList: ',cartList);
             console.log('cart',cart);
 
-            //cartList[cartListIndexAddedProduct].hasOwnProperty('quantity') 
             //if the bought product has previously been bought, it is already in cart 
+
             let indexProductInCart = cart.findIndex(item => item.id == cartList[cartListIndexAddedProduct].id);
             console.log('indexProductInCart',indexProductInCart);
                 //product is not in cart
@@ -259,18 +262,17 @@ function addToCart(id) {
 // Exercise 9
 function removeFromCart(id) {
     // remove one unit of the product or remove it completely from cart array 
-
     let indexProdOfCartToRemove = cart.findIndex(item => item.id === id);
     
     if (cart[indexProdOfCartToRemove].quantity  > 1) {
         cart[indexProdOfCartToRemove].quantity -= 1;
     } else {
         cart[indexProdOfCartToRemove].quantity -= 1;
-        delete cart[indexProdOfCartToRemove];
+        cart.splice([indexProdOfCartToRemove],1);
         document.getElementById("line-" + id).innerHTML = '';
     }
-    
-    printCart();
+    totalNumberItemsCart -= 1;    
+    printCart();    
 }
 
 function open_modal(){
