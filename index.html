@@ -8,46 +8,51 @@
         <title>ShopNow</title>
         <!-- Favicon-->
         <link rel="icon" type="image/x-icon" href="images/favicon.ico" />
-		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+		<!-- Core theme CSS (includes Bootstrap)-->
+		<link rel="stylesheet" href="css/custom.css">
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Merienda:wght@400;700&display=swap" rel="stylesheet">
 
 		<!-- Bootstrap icons-->
-		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
-    integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
-        <!-- Core theme CSS (includes Bootstrap)-->
+		<script src="https://kit.fontawesome.com/d76e0b1ddf.js" crossorigin="anonymous"></script>
+		<!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+    integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous"> -->
+        
     </head>
     <body data-bs-spy="scroll" data-bs-target="#navbar-example2" data-bs-offset="50">
         <!-- Navigation-->
-		<nav class="navbar py-3 py-lg-0 navbar-light bg-light navbar-expand-lg" id="navbar-example2">
+		<nav class="navbar py-3 py-lg-0 navbar-light navbar-expand-lg bg-primary" id="navbar-example2">
 			 <div class="container d-flex">
-				 <a class="navbar-brand" href="#!">ShopNow</a>
+				 <a class="navbar-brand typoTitles fw-bolder text-white" href="#!"><i class="fa-solid fa-droplet"></i> DripDrop Shop</a>
 				 <div class="d-flex flex-row order-lg-last align-items-center">					
 					 <button type="button" class="navbar-toggler order-last collapsed" data-bs-toggle="collapse" data-bs-target="#navbar" aria-expanded="false" aria-controls="navbar">
 						 <span class="navbar-toggler-icon"></span>
 					 </button>
 					 <ul class="navbar-nav me-3 me-lg-0 d-flex flex-row align-items-center">
 						<!-- <li class="dropdown search-dropdown nav-item py-lg-3 me-3">
-							<a href="javascript:void(0)" class="btn btn-outline-dark flex-center" type="button" onclick="generateCart()"> generate Cart </a>
+							<a href="javascript:void(0)" class="btn btn-outline-secondary flex-center" type="button" onclick="generateCart()"> generate Cart </a>
 						</li>
  						-->
 						 <li class="dropdown search-dropdown nav-item py-lg-3">						 
-							 <a href="javascript:void(0)" class="btn btn-outline-dark flex-center" type="button" data-bs-toggle="modal" data-bs-target="#cartModal" onclick="open_modal()" data-bs-auto-close="outside">
+							 <a href="javascript:void(0)" class="btn btn-outline-dark bg-danger flex-center" type="button" data-bs-toggle="modal" data-bs-target="#cartModal" onclick="open_modal()" data-bs-auto-close="outside">
 								<i class="fas fa-shopping-cart me-1"></i> Cart <span class="badge bg-dark text-white ms-1 rounded-pill" id="count_product">0</span>
 							 </a>
 						 </li>
 					 </ul>
 				 </div>
 
-				 <div id="navbar" class="navbar-collapse collapse">
+				 <div id="navbar" class="navbar-collapse collapse d-flex justify-content-lg-center">
 
-					 <ul class="navbar-nav me-auto mb-4 mb-lg-0 ms-lg-5">
-						 <li class="nav-item">
-						  <a class="nav-link" href="#grocery"><i class="fas fa-shopping-basket"></i> Grocery</a>
+					 <ul class="navbar-nav mb-4 mb-lg-0 ms-lg-5">
+						 <li class="nav-item pe-4">
+						  <a class="nav-link" href="#glass"><i class="fa-solid fa-bottle-droplet"></i> Glass Bottles </a>
 						</li>
-						<li class="nav-item">
-						  <a class="nav-link" href="#beauty"><i class="fas fa-heart"></i> Beauty</a>
+						<li class="nav-item pe-3">
+						  <a class="nav-link" href="#stainless"><i class="fa-solid fa-jar"></i> Stainless Steal Bottles</a>
 						</li>
-						<li class="nav-item">
-						  <a class="nav-link" href="#clothes"><i class="fas fa-tshirt"></i> Clothes</a>
+						<li class="nav-item ps-lg-1">
+						  <a class="nav-link" href="#accessories"><i class="fa-solid fa-filter"></i> Accessories</a>
 						</li>
 
 					 </ul>
@@ -56,58 +61,58 @@
 		 </nav>
 
         <!-- Header-->
-        <header class="bg-dark py-5">
-            <div class="container px-4 px-lg-5 my-5">
-                <div class="text-center text-white">
-                    <h1 class="display-4 fw-bolder">IT Academy Shop</h1>
-                    <p class="lead fw-normal text-white-50 mb-0">Get up to 50% off Today Only!</p>
+        <header class="bg-dark bg-photo py-5">
+            <div class="container px-4 px-lg-5 my-5 d-flex justify-content-end animate">
+                <div class="text-center text-white w-70 bg-danger shadow opac-95 py-3">
+                    <h1 class="display-5 px-4 fw-bolder typoTitles">DripDrop <i class="fa-solid fa-droplet"></i> Reusable bottles</h1>
+                    <p class="lead fw-normal text-dark mb-0">... and get rid of disposable bottles!</p>
                 </div>
             </div>
         </header>
 		<!-- Section-->
-		<section class="pt-5" id="grocery">
-			<h2 class="text-center"><i class="fas fa-shopping-basket pe-3"></i>Grocery</h2>
+		<section class="pt-5" id="glass">
+			<h2 class="text-center typoTitles fw-bold"><i class="fa-solid fa-bottle-droplet pe-3"></i>Glass Bottles</h2>
 			<div class="container px-4 px-lg-5 mt-5">
 				<div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
 					<div class="col mb-5">
 						<div class="card h-100">
-							<img class="card-img-top" src="./images/product.svg" alt="..." />
+							<img class="card-img-top shadow" src="./images/white-glass-1-2.jpg" alt="..." />
 							<div class="card-body p-4">
 								<div class="text-center">
-									<h5 class="fw-bolder">Cooking Oil</h5>
+									<h5 class="text-secondary fw-light">White glass bottle 1lt</h5>
 									$10.5
 								</div>
 							</div>
 							<div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-								<div class="text-center"><button type="button" onclick="addToCart(1)" class="btn btn-outline-dark">Add to cart</button></div>
+								<div class="text-center"><button type="button" onclick="addToCart(1)" class="btn btn-outline-primary">Add to cart</button></div>
 							</div>
 						</div>
 					</div>
 					<div class="col mb-5">
 						<div class="card h-100">
-							<img class="card-img-top" src="./images/product.svg" alt="..." />
+							<img class="card-img-top shadow" src="./images/black-glass-2.jpg" alt="..." />
 							<div class="card-body p-4">
 								<div class="text-center">
-									<h5 class="fw-bolder">Pasta</h5>
+									<h5 class="text-secondary fw-light">Black glass bottle 0.7lt</h5>
 									$6.25
 								</div>
 							</div>
 							<div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-								<div class="text-center"><button type="button" onclick="addToCart(2)" class="btn btn-outline-dark">Add to cart</button></div>
+								<div class="text-center"><button type="button" onclick="addToCart(2)" class="btn btn-outline-primary">Add to cart</button></div>
 							</div>
 						</div>
 					</div>
 					<div class="col mb-5">
 						<div class="card h-100">
-							<img class="card-img-top" src="./images/product.svg" alt="..." />
+							<img class="card-img-top shadow" src="./images/blue-glass-3.jpg" alt="..." />
 							<div class="card-body p-4">
 								<div class="text-center">
-									<h5 class="fw-bolder">Instant cupcake mixture</h5>
+									<h5 class="text-secondary fw-light">Blue glass bottle 0.5lt</h5>
 									$5
 								</div>
 							</div>
 							<div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-								<div class="text-center"><button type="button" onclick="addToCart(3)" class="btn btn-outline-dark">Add to cart</button></div>
+								<div class="text-center"><button type="button" onclick="addToCart(3)" class="btn btn-outline-primary">Add to cart</button></div>
 							</div>
 						</div>
 					</div>
@@ -115,49 +120,49 @@
 				</div>
 			</div>
 		</section>
-		<section class="pt-5" id="beauty">
-			 <h2 class="text-center"><i class="fas fa-heart pe-3"></i>Beauty</h2>
+		<section class="pt-5" id="stainless">
+			 <h2 class="text-center typoTitles fw-bold"><i class="fa-solid fa-jar pe-3"></i>Stainless Steal Bottles</h2>
 			<div class="container px-4 px-lg-5 mt-5">
 				<div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
 					<div class="col mb-5">
 						<div class="card h-100">
-							<img class="card-img-top" src="./images/product.svg" alt="..." />
+							<img class="card-img-top shadow" src="./images/green-metallic.jpg" alt="..." />
 							<div class="card-body p-4">
 								<div class="text-center">
-									<h5 class="fw-bolder">All-in-1</h5>
+									<h5 class="text-secondary fw-light">Green Metallic 3.2lt</h5>
 									$260
 								</div>
 							</div>
 							<div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-								<div class="text-center"><button type="button" onclick="addToCart(4)" class="btn btn-outline-dark">Add to cart</button></div>
+								<div class="text-center"><button type="button" onclick="addToCart(4)" class="btn btn-outline-primary">Add to cart</button></div>
 							</div>
 						</div>
 					</div>
 					<div class="col mb-5">
 						<div class="card h-100">
-							<img class="card-img-top" src="./images/product.svg" alt="..." />
+							<img class="card-img-top shadow" src="./images/blue-metallic.jpg" alt="..." />
 							<div class="card-body p-4">
 								<div class="text-center">
-									<h5 class="fw-bolder">Zero makeup kit</h5>
+									<h5 class="text-secondary fw-light">Blue Metallic 1.5lt</h5>
 									$20.5
 								</div>
 							</div>
 							<div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-								<div class="text-center"><button type="button" onclick="addToCart(5)" class="btn btn-outline-dark">Add to cart</button></div>
+								<div class="text-center"><button type="button" onclick="addToCart(5)" class="btn btn-outline-primary">Add to cart</button></div>
 							</div>
 						</div>
 					</div>
 					<div class="col mb-5">
 						<div class="card h-100">
-							<img class="card-img-top" src="./images/product.svg" alt="..." />
+							<img class="card-img-top shadow" src="./images/pink-metallic.jpg" alt="..." />
 							<div class="card-body p-4">
 								<div class="text-center">
-									<h5 class="fw-bolder">Lip tints</h5>
+									<h5 class="text-secondary fw-light">Pink Metallic 1lt</h5>
 									$12.75
 								</div>
 							</div>
 							<div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-								<div class="text-center"><button type="button" onclick="addToCart(6)" class="btn btn-outline-dark">Add to cart</button></div>
+								<div class="text-center"><button type="button" onclick="addToCart(6)" class="btn btn-outline-primary">Add to cart</button></div>
 							</div>
 						</div>
 					</div>
@@ -165,49 +170,49 @@
 				</div>
 			</div>
 		</section>
-		<section class="pt-5" id="clothes">
-			 <h2 class="text-center"><i class="fas fa-tshirt pe-3"></i>Clothes</h2>
+		<section class="pt-5" id="accessories">
+			 <h2 class="text-center typoTitles fw-bold"><i class="fa-solid fa-filter pe-3"></i>Accessories</h2>
 			<div class="container px-4 px-lg-5 mt-5">
 				<div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
 					<div class="col mb-5">
 						<div class="card h-100">
-							<img class="card-img-top" src="./images/product.svg" alt="..." />
+							<img class="card-img-top shadow" src="./images/glass-lid-straws-kit.jpg" alt="..." />
 							<div class="card-body p-4">
 								<div class="text-center">
-									<h5 class="fw-bolder">Lawn dress</h5>
+									<h5 class="text-secondary fw-light">Kit - a glass jar with 3 lids, 5 straws, a funnel and 2 cleaning brushes</h5>
 									$15
 								</div>
 							</div>
 							<div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-								<div class="text-center"><button type="button" onclick="addToCart(7)" class="btn btn-outline-dark">Add to cart</button></div>
+								<div class="text-center"><button type="button" onclick="addToCart(7)" class="btn btn-outline-primary">Add to cart</button></div>
 							</div>
 						</div>
 					</div>
 					<div class="col mb-5">
 						<div class="card h-100">
-							<img class="card-img-top" src="./images/product.svg" alt="..." />
+							<img class="card-img-top shadow" src="./images/cleaning-brushes-22.jpg" alt="..." />
 							<div class="card-body p-4">
 								<div class="text-center">
-									<h5 class="fw-bolder">Lawn-chiffon combo</h5>
+									<h5 class="text-secondary fw-light">Cleaning brushes - 22u</h5>
 									$19.99
 								</div>
 							</div>
 							<div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-								<div class="text-center"><button type="button" onclick="addToCart(8)" class="btn btn-outline-dark">Add to cart</button></div>
+								<div class="text-center"><button type="button" onclick="addToCart(8)" class="btn btn-outline-primary">Add to cart</button></div>
 							</div>
 						</div>
 					</div>
 					<div class="col mb-5">
 						<div class="card h-100">
-							<img class="card-img-top" src="./images/product.svg" alt="..." />
+							<img class="card-img-top shadow" src="./images/cleaning-brushes-10.jpg" alt="..." />
 							<div class="card-body p-4">
 								<div class="text-center">
-									<h5 class="fw-bolder">Toddler Frock</h5>
+									<h5 class="text-secondary fw-light">Cleaning brushes - 10u</h5>
 									$9.99
 								</div>
 							</div>
 							<div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-								<div class="text-center"><button type="button" onclick="addToCart(9)" class="btn btn-outline-dark">Add to cart</button></div>
+								<div class="text-center"><button type="button" onclick="addToCart(9)" class="btn btn-outline-primary">Add to cart</button></div>
 							</div>
 						</div>
 					</div>
@@ -218,7 +223,7 @@
 	
         <!-- Footer-->
         <footer class="py-3 bg-dark">
-            <div class="container"><p class="m-0 text-center text-white">Copyright &copy; Your Website 2022</p></div>
+            <div class="container"><p class="m-0 text-center text-white">Copyright &copy; Gloria Figueras 2022</p></div>
         </footer>
 		
 		<div class="modal fade" id="cartModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">

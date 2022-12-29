@@ -1,0 +1,54 @@
+// colors
+//$body-bg: #eefaff;
+$primary: #0f629e;
+
+// import bootstrap
+@import '../node_modules/bootstrap/scss/bootstrap';
+
+//header
+
+.typoTitles {
+    font-family: 'Merienda', cursive; 
+}
+
+.opac-95 { opacity: 0.95;}
+.bg-photo {
+    background-image: url('../images/header-portada64.jpg');
+    height: 436px; 
+    background-position: center; 
+    background-repeat: no-repeat; 
+    background-size: cover;     
+}
+
+.card, img {
+    transition: all 0.3s ease-in-out;
+}
+.card:hover {   
+    transform: scale(1.05);    
+}
+
+img:hover {
+    transform: scale(0.95);
+    opacity: 0.95;
+}
+
+.animate {
+    animation-name: zooms;
+    animation-timing-function: ease-in-out;
+    animation-duration: 3s;
+
+}
+@keyframes zooms {
+    from {opacity: 0.1; margin-left: -1000px;}
+    to {opacity: 0.99;  margin-left: 70px;}
+}
+
+.nav-link {
+    color: $gray-300;
+    &:hover {
+    color: $white;
+    }
+    &:focus {
+        color: $danger;
+    }
+}

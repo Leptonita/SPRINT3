@@ -1,0 +1,23 @@
+{
+  "dependencies": {
+    "bootstrap": "^5.2.3"
+  },
+  "name": "ecommerce-frontend-sprint-3",
+  "description": "A company in the e-commerce sector has asked us for a web application that allows them to offer the purchase of their products through the internet.",
+  "version": "1.0.0",
+  "main": "index.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Leptonita/SPRINT3.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Leptonita/SPRINT3/issues"
+  },
+  "homepage": "https://github.com/Leptonita/SPRINT3#readme"
+}
