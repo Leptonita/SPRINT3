@@ -3,7 +3,7 @@
 const products = [
    {
         id: 1,
-        name: 'cooking oil',
+        name: 'White glass bottle',
         price: 10.5,
         type: 'grocery',
         offer: {
@@ -13,13 +13,13 @@ const products = [
     },
     {
         id: 2,
-        name: 'Pasta',
+        name: 'Black glass bottle',
         price: 6.25,
         type: 'grocery'
     },
     {
         id: 3,
-        name: 'Instant cupcake mixture',
+        name: 'Blue glass bottle',
         price: 5,
         type: 'grocery',
         offer: {
@@ -29,37 +29,37 @@ const products = [
     },
     {
         id: 4,
-        name: 'All-in-one',
+        name: 'Green silver bottle',
         price: 260,
         type: 'beauty'
     },
     {
         id: 5,
-        name: 'Zero Make-up Kit',
+        name: 'Blue metallic bottle',
         price: 20.5,
         type: 'beauty'
     },
     {
         id: 6,
-        name: 'Lip Tints',
+        name: 'Pink metallic bottle',
         price: 12.75,
         type: 'beauty'
     },
     {
         id: 7,
-        name: 'Lawn Dress',
+        name: 'Special Kit',
         price: 15,
         type: 'clothes'
     },
     {
         id: 8,
-        name: 'Lawn-Chiffon Combo',
+        name: 'Cleaning brushes 22u',
         price: 19.99,
         type: 'clothes'
     },
     {
         id: 9,
-        name: 'Toddler Frock',
+        name: 'Cleaning brushes 10u',
         price: 9.99,
         type: 'clothes'
     }
@@ -177,7 +177,7 @@ function generateCart() {
 function applyPromotionsCart() {
      // Apply promotions to each item in the array "cart"
      cart.forEach(function(item){
-        if (item.name == 'cooking oil') {
+        if (item.id === 1) {
             item.price = (item.quantity >= 3) ? 10 : 10.5;    
         } else if (item.id === 3){
             item.price = (item.quantity >= 10) ? 3.33 : 5;              
@@ -203,7 +203,7 @@ function printCart() {
         shoppingCartItem += `<tr id="line-${item.id}">
         <th scope="row">${item.name}</th>
         <td>${item.price}</td>
-        <td> <button onclick="removeFromCart(${item.id})">-</button>  ${item.quantity} <button onclick="addToCart(${item.id})">\+</button> </td>
+        <td> <a href="javascript:void(0)" onclick="removeFromCart(${item.id})"><img src="./images/menos.png"></a>   ${item.quantity}  <a href="javascript:void(0)" onclick="addToCart(${item.id})"><img src="./images/mas.png"></a></td>
         <td>${item.subtotalWithDiscount}</td>
         </tr>`;
        

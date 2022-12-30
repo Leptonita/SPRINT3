@@ -69,7 +69,7 @@
   --bs-border-radius-2xl: 2rem;
   --bs-border-radius-pill: 50rem;
   --bs-link-color: #0f629e;
-  --bs-link-hover-color: #0c4e7e;
+  --bs-link-hover-color: #0e588e;
   --bs-code-color: #d63384;
   --bs-highlight-bg: #fff3cd;
 }
@@ -6792,42 +6792,42 @@ textarea.form-control-lg {
   color: #0f629e !important;
 }
 .link-primary:hover, .link-primary:focus {
-  color: #0c4e7e !important;
+  color: #0e588e !important;
 }
 
 .link-secondary {
   color: #6c757d !important;
 }
 .link-secondary:hover, .link-secondary:focus {
-  color: #565e64 !important;
+  color: #616971 !important;
 }
 
 .link-success {
   color: #198754 !important;
 }
 .link-success:hover, .link-success:focus {
-  color: #146c43 !important;
+  color: #177a4c !important;
 }
 
 .link-info {
   color: #0dcaf0 !important;
 }
 .link-info:hover, .link-info:focus {
-  color: #3dd5f3 !important;
+  color: #25cff2 !important;
 }
 
 .link-warning {
   color: #ffc107 !important;
 }
 .link-warning:hover, .link-warning:focus {
-  color: #ffcd39 !important;
+  color: #ffc720 !important;
 }
 
 .link-danger {
   color: #dc3545 !important;
 }
 .link-danger:hover, .link-danger:focus {
-  color: #b02a37 !important;
+  color: #c6303e !important;
 }
 
 .link-light {
@@ -6841,7 +6841,7 @@ textarea.form-control-lg {
   color: #212529 !important;
 }
 .link-dark:hover, .link-dark:focus {
-  color: #1a1e21 !important;
+  color: #1e2125 !important;
 }
 
 .ratio {
@@ -10949,6 +10949,10 @@ textarea.form-control-lg {
   background-size: cover;
 }
 
+.card {
+  box-shadow: 3px 3px 8px #e9ecef;
+}
+
 .card, img {
   transition: all 0.3s ease-in-out;
 }
@@ -11000,4 +11004,9 @@ img:hover {
 }
 .nav-link:focus {
   color: #dc3545;
+}
+
+#cart_list a {
+  text-decoration: none;
+  font-weight: bold;
 }/*# sourceMappingURL=custom.css.map */

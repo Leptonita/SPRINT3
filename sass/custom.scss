@@ -1,7 +1,7 @@
 // colors
 //$body-bg: #eefaff;
 $primary: #0f629e;
-
+$link-shade-percentage: 10%;
 // import bootstrap
 @import '../node_modules/bootstrap/scss/bootstrap';
 
@@ -20,6 +20,9 @@ $primary: #0f629e;
     background-size: cover;     
 }
 
+.card {
+    box-shadow: 3px 3px 8px $gray-200;
+}
 .card, img {
     transition: all 0.3s ease-in-out;
 }
@@ -51,4 +54,8 @@ img:hover {
     &:focus {
         color: $danger;
     }
+}
+#cart_list a {
+    text-decoration: none;
+    font-weight: bold;
 }
