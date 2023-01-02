@@ -1,4 +1,9 @@
 @charset "UTF-8";
+:root {
+  --myRed: #e64252;
+  --myRedDark: #b7303d;
+}
+
 /*!
  * Bootstrap  v5.2.3 (https://getbootstrap.com/)
  * Copyright 2011-2022 The Bootstrap Authors
@@ -11009,4 +11014,13 @@ img:hover {
 #cart_list a {
   text-decoration: none;
   font-weight: bold;
+}
+
+.card {
+  background-color: #f1f9ff;
+}
+
+.btn-primary {
+  --bs-btn-bg: var(--myRed);
+  --bs-btn-border-color: var(--myRedDark);
 }/*# sourceMappingURL=custom.css.map */
