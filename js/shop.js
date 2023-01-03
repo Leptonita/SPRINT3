@@ -72,7 +72,8 @@ let cart = [];
 
 let total = 0;
 
-let totalNumberItemsCart = 0;
+let totalNumberItemsCart = 0;    
+
 
 // Exercise 1
 function buy(id) {
@@ -189,6 +190,7 @@ function applyPromotionsCart() {
     return cart;
 }
 
+
 // Exercise 6
 function printCart() {
     // Fill the shopping cart modal manipulating the shopping cart dom
@@ -225,6 +227,8 @@ function addToCart(id) {
 
     // conocer posicion en el array productos del producto comprado (id) 
     totalNumberItemsCart +=1;
+    localStorage.setItem("countItems", totalNumberItemsCart);
+
     let indexArrProducts = -1;
     let i = 0;
     while ( i < products.length && indexArrProducts === -1 ) {
@@ -273,9 +277,34 @@ function removeFromCart(id) {
     }
     totalNumberItemsCart -= 1;    
     printCart();    
+    clearLocalStorage();
 }
 
 function open_modal(){
 	console.log("Open Modal");
 	//printCart();
+}
+
+
+
+// pasar variable entre paginas para ver el numero total de items al hacer checkout
+
+function updateTotalNumberItemsCart() {
+    localStorage.countItems = Number(localStorage.getItem("countItems"));
+    document.getElementById("count_product").innerHTML = Number(localStorage.countItems);
+    console.log('countItems ', Number(localStorage.countItems));
+}
+
+if (typeof(localStorage.countItems) !== "undefined") {
+    // LocalStorage disponible
+    //let countItems = Number(localStorage.getItem("countItems"));
+    updateTotalNumberItemsCart();
+   // alert('localStorage soportado ' + Number(localStorage.countItems));
+} else {
+    // LocalStorage no soportado en este navegador
+    //alert('localStorage no soportado o vacío');
+}
+
+function clearLocalStorage() {
+    localStorage.removeItem("countItems");
 }
