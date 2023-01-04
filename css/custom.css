@@ -10947,11 +10947,11 @@ textarea.form-control-lg {
 }
 
 .bg-photo {
-  background-image: url("../images/header-portada64.jpg");
-  height: 436px;
-  background-position: center;
+  background-image: url("../images/header-portada64-tablet.jpg");
+  height: 250px;
+  background-position: top;
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: 100%;
 }
 
 .card {
@@ -10980,25 +10980,98 @@ img:hover {
           animation-duration: 3s;
 }
 
-@-webkit-keyframes zooms {
-  from {
-    opacity: 0.1;
-    margin-left: -1000px;
-  }
-  to {
-    opacity: 0.99;
-    margin-left: 70px;
+@media screen and (min-width: 767px) {
+  .bg-photo {
+    background-image: url("../images/header-portada64-tablet.jpg");
+    height: 427px;
+    background-position: top;
+    background-size: cover;
   }
 }
-
-@keyframes zooms {
-  from {
-    opacity: 0.1;
-    margin-left: -1000px;
+@media screen and (min-width: 992px) {
+  .bg-photo {
+    background-image: url("../images/header-portada64.jpg");
+    height: 436px;
+    background-position: top;
+    background-size: cover;
   }
-  to {
-    opacity: 0.99;
-    margin-left: 70px;
+  @-webkit-keyframes zooms {
+    from {
+      opacity: 0.1;
+      margin-left: -1000px;
+    }
+    to {
+      opacity: 0.99;
+      margin-left: 1px;
+    }
+  }
+  @keyframes zooms {
+    from {
+      opacity: 0.1;
+      margin-left: -1000px;
+    }
+    to {
+      opacity: 0.99;
+      margin-left: 1px;
+    }
+  }
+}
+@media screen and (min-width: 1024px) {
+  .bg-photo {
+    background-image: url("../images/header-portada64.jpg");
+    height: 436px;
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  @-webkit-keyframes zooms {
+    from {
+      opacity: 0.1;
+      margin-left: -1000px;
+    }
+    to {
+      opacity: 0.99;
+      margin-left: 20px;
+    }
+  }
+  @keyframes zooms {
+    from {
+      opacity: 0.1;
+      margin-left: -1000px;
+    }
+    to {
+      opacity: 0.99;
+      margin-left: 20px;
+    }
+  }
+}
+@media screen and (min-width: 1200px) {
+  .bg-photo {
+    background-image: url("../images/header-portada64.jpg");
+    height: 436px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  @-webkit-keyframes zooms {
+    from {
+      opacity: 0.1;
+      margin-left: -1000px;
+    }
+    to {
+      opacity: 0.99;
+      margin-left: 70px;
+    }
+  }
+  @keyframes zooms {
+    from {
+      opacity: 0.1;
+      margin-left: -1000px;
+    }
+    to {
+      opacity: 0.99;
+      margin-left: 70px;
+    }
   }
 }
 .nav-link {

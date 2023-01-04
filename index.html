@@ -23,17 +23,14 @@
     <body data-bs-spy="scroll" data-bs-target="#navbar-example2" data-bs-offset="50">
         <!-- Navigation-->
 		<nav class="navbar py-3 py-lg-0 navbar-light navbar-expand-lg bg-primary" id="navbar-example2">
-			 <div class="container d-flex">
+			 <div class="container d-flex justify-content-center justify-content-md-between">
 				 <a class="navbar-brand typoTitles fw-bolder text-white" href="#!">Drip <i class="fa-solid fa-droplet"></i> Drop</a>
-				 <div class="d-flex flex-row order-lg-last align-items-center">					
-					 <button type="button" class="navbar-toggler order-last collapsed" data-bs-toggle="collapse" data-bs-target="#navbar" aria-expanded="false" aria-controls="navbar">
-						 <span class="navbar-toggler-icon"></span>
-					 </button>
-					 <ul class="navbar-nav me-3 me-lg-0 d-flex flex-row align-items-center">
-						<!-- <li class="dropdown search-dropdown nav-item py-lg-3 me-3">
-							<a href="javascript:void(0)" class="btn btn-outline-secondary flex-center" type="button" onclick="generateCart()"> generate Cart </a>
-						</li>
- 						-->
+				 <div class="d-flex flex-row order-lg-last align-items-center">	
+									
+					<button type="button" class="navbar-toggler order-last collapsed" data-bs-toggle="collapse" data-bs-target="#navbar" aria-expanded="false" aria-controls="navbar">
+						<span class="navbar-toggler-icon"></span>
+					</button>
+					 <ul class="navbar-nav me-2 me-lg-0 d-flex flex-row align-items-center">
 						 <li class="dropdown search-dropdown nav-item py-lg-3">						 
 							 <a href="javascript:void(0)" class="btn btn-primary flex-center" type="button" data-bs-toggle="modal" data-bs-target="#cartModal" onclick="open_modal()" data-bs-auto-close="outside">
 								<i class="fas fa-shopping-cart me-1"></i> Cart <span class="badge bg-dark text-white ms-1 rounded-pill" id="count_product">0</span>
@@ -42,18 +39,17 @@
 					 </ul>
 				 </div>
 
-				 <div id="navbar" class="navbar-collapse collapse d-flex justify-content-lg-center">
-
+				<div id="navbar" class="navbar-collapse collapse">
 					 <ul class="navbar-nav mb-4 mb-lg-0 ms-lg-5">
 						 <li class="nav-item pe-4">
 							<!-- <i class="fa-solid fa-bottle-droplet"> -->
-						  <a class="nav-link" href="#glass">Glass  <i class="fa-solid fa-bottle-droplet"></i> </a>
+						  <a class="nav-link text-center" href="#glass">Glass  <i class="fa-solid fa-bottle-droplet"></i> </a>
 						</li>
 						<li class="nav-item pe-3">
-						  <a class="nav-link" href="#stainless">Stainless Steal <i class="fa-solid fa-jar"></i> </a>
+						  <a class="nav-link text-center" href="#stainless">Stainless Steal <i class="fa-solid fa-jar"></i> </a>
 						</li>
 						<li class="nav-item ps-lg-1">
-						  <a class="nav-link" href="#accessories">Accessories <i class="fa-solid fa-filter"></i> </a>
+						  <a class="nav-link text-center" href="#accessories">Accessories <i class="fa-solid fa-filter"></i> </a>
 						</li>
 
 					 </ul>
@@ -62,11 +58,11 @@
 		 </nav>
 
         <!-- Header-->
-        <header class="bg-dark bg-photo py-5">
-            <div class="container px-4 px-lg-5 my-5 d-flex justify-content-end animate">
-                <div class="text-center text-white w-70 bg-danger shadow opac-95 py-3">
-                    <h1 class="display-5 px-4 fw-bolder typoTitles">Drip <i class="fa-solid fa-droplet"></i> Drop Reusable bottles</h1>
-                    <p class="lead fw-normal text-dark mb-0">... and get rid of disposable bottles!</p>
+        <header class="container-fluid bg-photo pb-md-5 position-relative">
+            <div class="container px-4 px-lg-5 mb-5 mb-lg-5 d-flex justify-content-end animate">
+                <div class="text-center text-white w-70 bg-danger shadow opac-95 pt-2 mt-md-5">
+                    <h1 class="display-6 display-md-5 px-4 fw-bolder typoTitles">Drip <i class="fa-solid fa-droplet"></i> Drop Reusable bottles</h1>
+                    <p class="lead d-none d-md-block fw-normal text-dark mb-0">... and get rid of disposable bottles!</p>
                 </div>
             </div>
         </header>
@@ -74,7 +70,7 @@
 		<section class="pt-5" id="glass">
 			<h2 class="text-center typoTitles fw-bold"><i class="fa-solid fa-bottle-droplet pe-3"></i>Glass Bottles</h2>
 			<div class="container px-4 px-lg-5 mt-5">
-				<div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+				<div class="row gx-4 gx-lg-5 row-cols-1 row-cols-md-3 row-cols-xl-4 justify-content-center">
 					<div class="col mb-5">
 						<div class="card h-100">
 							<img class="card-img-top shadow" src="./images/white-glass-1-2.jpg" alt="..." />
@@ -124,7 +120,7 @@
 		<section class="pt-5" id="stainless">
 			 <h2 class="text-center typoTitles fw-bold"><i class="fa-solid fa-jar pe-3"></i>Stainless Steal Bottles</h2>
 			<div class="container px-4 px-lg-5 mt-5">
-				<div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+				<div class="row gx-4 gx-lg-5 row-cols-1 row-cols-md-3 row-cols-xl-4 justify-content-center">
 					<div class="col mb-5">
 						<div class="card h-100">
 							<img class="card-img-top shadow" src="./images/green-metallic.jpg" alt="..." />
@@ -174,7 +170,7 @@
 		<section class="pt-5" id="accessories">
 			 <h2 class="text-center typoTitles fw-bold"><i class="fa-solid fa-filter pe-3"></i>Accessories</h2>
 			<div class="container px-4 px-lg-5 mt-5">
-				<div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+				<div class="row gx-4 gx-lg-5 row-cols-1 row-cols-md-3 row-cols-xl-4 justify-content-center">
 					<div class="col mb-5">
 						<div class="card h-100">
 							<img class="card-img-top shadow" src="./images/glass-lid-straws-kit.jpg" alt="..." />
@@ -279,8 +275,8 @@
 		</div>
 	
         <!-- Bootstrap core JS-->
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js" integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous"></script>
+		
         <!-- Core theme JS-->
         <script src="js/shop.js"></script>
 		<script src="js/checkout.js"></script>

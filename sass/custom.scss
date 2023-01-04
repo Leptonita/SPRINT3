@@ -18,12 +18,13 @@ $link-shade-percentage: 10%;
 }
 
 .opac-95 { opacity: 0.95;}
+
 .bg-photo {
-    background-image: url('../images/header-portada64.jpg');
-    height: 436px; 
-    background-position: center; 
+    background-image: url('../images/header-portada64-tablet.jpg');
+    height:250px;
+    background-position: top; 
     background-repeat: no-repeat; 
-    background-size: cover;     
+    background-size: 100%;     
 }
 
 .card {
@@ -45,12 +46,56 @@ img:hover {
     animation-name: zooms;
     animation-timing-function: ease-in-out;
     animation-duration: 3s;
+}
+@media screen and (min-width: 767px) { 
+    .bg-photo {
+        background-image: url('../images/header-portada64-tablet.jpg');
+        height: 427px; 
+        background-position: top; 
+        background-size: cover;
+    }  
+}
+@media screen and (min-width: 992px) {   
+    .bg-photo {
+        background-image: url('../images/header-portada64.jpg');
+        height: 436px; 
+        background-position: top; 
+        background-size: cover;
+    }  
+     
+    @keyframes zooms {
+        from {opacity: 0.1; margin-left: -1000px;}
+        to {opacity: 0.99;  margin-left: 1px;}
+    }
+}
+@media screen and (min-width: 1024px) {    
+    .bg-photo {
+        background-image: url("../images/header-portada64.jpg");
+        height: 436px;
+        background-position: top;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }  
+    @keyframes zooms {
+        from {opacity: 0.1; margin-left: -1000px;}
+        to {opacity: 0.99;  margin-left: 20px;}
+    }
+}
+@media screen and (min-width: 1200px) {    
+    .bg-photo {
+        background-image: url("../images/header-portada64.jpg");
+        height: 436px;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }  
+    @keyframes zooms {
+        from {opacity: 0.1; margin-left: -1000px;}
+        to {opacity: 0.99;  margin-left: 70px;}
+    }
+}
 
-}
-@keyframes zooms {
-    from {opacity: 0.1; margin-left: -1000px;}
-    to {opacity: 0.99;  margin-left: 70px;}
-}
+
 
 .nav-link {
     color: $gray-300;
