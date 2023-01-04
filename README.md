@@ -93,3 +93,7 @@ Exercise 7 - Checkout Page - form validation with JS
 Exercise 8 - refactoring the buying process in one function - addToCart()
 
 Exercise 9 - Removing products from cart (and adding them too)
+
+Exercise 10 - Design of shop called 'Drip Drop' for reusable bottles sales
+
+Exercice 11 - Responsive
